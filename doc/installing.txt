@@ -23,13 +23,13 @@ libxml2-python
 
 rt-tests
   A collection of programs used to measure real-time behavior
-  git://git.kernel.org/pub/scm/linux/kernel/git/clrkwllms/rt-tests.git
+  git://git.kernel.org/pub/scm/utils/rt-tests/rt-tests.git
 
 So, to install rteval on a Fedora 11 (or newer) system:
 
 $ sudo yum install python-{dmidecode,ethtool,schedutils}
 $ git clone \
-  git://git.kernel.org/pub/scm/linux/kernel/git/clrkwllms/rt-tests.git
+  git://git.kernel.org/pub/scm/utils/rt-tests/rt-tests.git
 $ cd rt-tests && sudo make prefix=/usr install
 $ cd ../rteval
 $ sudo make install

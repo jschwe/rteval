@@ -4,7 +4,7 @@ Release:	1%{?dist}
 Summary:	Source files for rteval loads
 Group:		Development/Tools
 License:	GPLv2
-URL:		http://git.kernel.org/?p=linux/kernel/git/clrkwllms/rteval.git
+URL:		https://git.kernel.org/pub/scm/utils/rteval/rteval.git
 Source0:        https://www.kernel.org/pub/linux/kernel/v5.x/linux-5.7.tar.xz
 
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)

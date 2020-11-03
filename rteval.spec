@@ -8,7 +8,7 @@ Summary:	Utility to evaluate system suitability for RT Linux
 
 Group:		Development/Tools
 License:	GPLv2
-URL:		http://git.kernel.org/?p=linux/kernel/git/clrkwllms/rteval.git
+URL:		https://git.kernel.org/pub/scm/utils/rteval/rteval.git
 Source0:	rteval-%{version}.tar.bz2
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 

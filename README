@@ -12,7 +12,7 @@ the system (gotten through DMI tables), the raw histogram data
 collected during the run and the statistical analysis of the run.
 
 The rteval source may be pulled from it's git tree on kernel.org:
-    git://git.kernel.org/pub/scm/linux/kernel/git/clrkwllms/rteval.git
+    git://git.kernel.org/pub/scm/utils/rteval/rteval.git
 
 Rteval requires the following packages to run:
 

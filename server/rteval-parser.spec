@@ -7,7 +7,7 @@ Summary:	Report parser daemon for  rteval XML-RPC
 
 Group:		Applications/System
 License:	GPLv2
-URL:		http://git.kernel.org/?p=linux/kernel/git/clrkwllms/rteval.git
+URL:		https://git.kernel.org/pub/scm/utils/rteval/rteval.git
 Source0:	%{pkgname}.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 

@@ -40,7 +40,7 @@ setup(name="rteval",
       description = "Evaluate system performance for Realtime",
       author = "Clark Williams, David Sommerseth",
       author_email = "williams@redhat.com, davids@redhat.com",
-      url = "https://git.kernel.org/?p=linux/kernel/git/clrkwllms/rteval.git;a=summary",
+      url = "https://git.kernel.org/pub/scm/utils/rteval/rteval.git",
       license = "GPLv2",
       long_description =
 """\
