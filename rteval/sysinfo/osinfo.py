@@ -90,7 +90,14 @@ class OSInfo:
         elif os.path.exists('/usr/sbin/sysreport'):
             exe = '/usr/sbin/sysreport'
         else:
-            raise RuntimeError("Can't find sosreport/sysreport")
+            opt_sos = shutil.which('sosreport', mode=os.X_OK)
+            opt_sys = shutil.which('sysreport', mode=os.X_OK)
+            if opt_sos is not None:
+                exe = opt_sos
+            elif opt_sys is not None:
+                exe = opt_sys
+            else:
+                raise RuntimeError("Can't find sosreport/sysreport")
 
         self.__logger.log(Log.DEBUG, "report tool: %s" % exe)
         options = ['-k', 'rpm.rpmva=off',
