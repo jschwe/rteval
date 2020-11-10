@@ -121,7 +121,8 @@ class OSInfo:
 
         (sys, node, release, ver, machine) = os.uname()
         isrt = 1
-        if ver.find(' RT ') == -1:
+        print(ver)
+        if ver.find(' RT ') == -1 and not 'PREEMPT_RT' in ver:
             isrt = 0
 
         node_n = libxml2.newNode("node")
