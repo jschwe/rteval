@@ -148,7 +148,7 @@ def unit_test(rootdir):
         if os.path.isfile("/tmp/dmesg"):
             md5orig = subprocess.check_output(("md5sum", "/var/log/dmesg"))
             md5copy = subprocess.check_output(("md5sum", "/tmp/dmesg"))
-            if md5orig.split(" ")[0] == md5copy.split(" ")[0]:
+            if md5orig.split()[0] == md5copy.split()[0]:
                 print("PASS")
             else:
                 print("FAIL (md5sum)")
