@@ -46,6 +46,29 @@ class OSInfo:
                 distro = f.readline().strip()
                 f.close()
                 break
+        # This should also work for somewhat recent Redhat and Fedora versions
+        # To not accidentally break anything, this only checks os-release for
+        # previously not detected distributions
+        if distro == "unknown":
+            os_release = '/etc/os-release'
+            if os.path.isfile(os_release):
+                with open(os_release) as f:
+                    content = dict()
+                    for line in f:
+                        if line.startswith('#') or not line.strip():
+                            continue
+                        key, val = line.rstrip().split('=', maxsplit=1)
+                        content[key] = val.strip('"').strip("'")
+                    if 'PRETTY_NAME' in content:
+                        distro = content['PRETTY_NAME']
+                    elif 'NAME' in content:
+                        distro = content['NAME']
+                        if 'VERSION' in content:
+                            distro += content['VERSION']
+                        elif 'VERSION_ID' in content:
+                            distro += content['VERSION_ID']
+
+
         return distro
 
 
