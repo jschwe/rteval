@@ -277,6 +277,7 @@ class XMLOut:
         return self.currtag.addChild(nodes)
 
 def unit_test(rootdir):
+    import os
     try:
         x = XMLOut('rteval', 'UNIT-TEST', None, 'UTF-8')
         x.NewReport()
@@ -302,7 +303,9 @@ def unit_test(rootdir):
         print("------------- XML OUTPUT ----------------------------")
         x.Write("-")
         print("------------- XSLT PARSED OUTPUT --------------------")
-        x.Write("-", "rteval_text.xsl")
+        dir_path = os.path.dirname(os.path.realpath(__file__))
+        rteval_text_path = os.path.join(dir_path, ("rteval_text.xsl"))
+        x.Write("-", rteval_text_path)
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
         x.Write("/tmp/xmlout-test.xml")
         del x
@@ -313,7 +316,7 @@ def unit_test(rootdir):
         print("------------- LOADED XML DATA --------------------------------")
         x.Write("-")
         print("------------- XSLT PARSED OUTPUT FROM LOADED XML--------------")
-        x.Write("-", "rteval_text.xsl")
+        x.Write("-", rteval_text_path)
         x.close()
 
         ##  Test new data parser ... it eats most data types
