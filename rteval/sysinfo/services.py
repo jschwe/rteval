@@ -81,7 +81,7 @@ class SystemServices:
         ret_services = {}
         cmd = '%s list-unit-files -t service --no-legend' % getcmdpath('systemctl')
         self.__log(Log.DEBUG, "cmd: %s" % cmd)
-        c = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        c = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, encoding='utf-8')
         for p in c.stdout:
             # p are lines like "servicename.service status"
             v = p.strip().split()
@@ -91,7 +91,7 @@ class SystemServices:
 
     def services_get(self):
         cmd = [getcmdpath('ps'), '-ocomm=', '1']
-        c = subprocess.Popen(cmd, stdout=subprocess.PIPE)
+        c = subprocess.Popen(cmd, stdout=subprocess.PIPE, text=True, encoding='utf-8')
         self.__init = c.stdout.read().strip()
         if self.__init == 'systemd':
             self.__log(Log.DEBUG, "Using systemd to get services status")
